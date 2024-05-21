@@ -3,7 +3,6 @@ import { AuthService } from './auth.service';
 import { RegisterDto } from './dto/register.dto';
 import { loginDto } from './dto/login.dto';
 import { AuthGuard } from './guard/auth.guard';
-import { Request } from 'express';
 
 @Controller('auth')
 export class AuthController {
@@ -28,7 +27,7 @@ export class AuthController {
 
     @Get('profile')
     @UseGuards(AuthGuard)
-    async profile(@Request() req: Request){
+    async profile(@Request() req){
         return req.user;
     }
 }
