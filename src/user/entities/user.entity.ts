@@ -45,6 +45,9 @@ export class User {
     @DeleteDateColumn({ type: 'timestamp', nullable: true })
     deleted_at: Date;
 
-    @ManyToOne(() => Role, role => role.users)
-    role: Role;
+    @Column({ default: "user" })
+    role: string;
+    
+    // @ManyToOne(() => Role, role => role.users)
+    // role: Role;
 }
